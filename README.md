@@ -1,2 +1,2 @@
 # passman
-passman is app that help to change the passwords as bulk 
+passman is a nodejs app that help to change the passwords as bulk 
