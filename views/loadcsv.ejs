@@ -1,0 +1,28 @@
+<%- include ('partials/navbar') %>
+<div class="container">
+    <div class="form-group container mt-5">
+        <!--  SINGLE FILE -->
+        <form action="/upload" enctype="multipart/form-data" method="POST">
+            <label for="exampleInputFile">Load Data </label>
+            <input type="file" name="csv" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" />
+            <small id="fileHelp" class="form-text text-muted">Choose CSV file To Import Data</small>
+            <button type="submit" class="btn btn-outline-info mt-3">Upload</button>
+        </form>
+    </div>
+
+    <%- include ('partials/messages') %>
+
+    <div class="form-group">
+        <form action="/manage/importdata" method="POST">
+            <label for="exampleSelect1">Choose Data File</label>
+
+            <select class="form-control" id="exampleSelect1" name="selectpicker">
+
+                <% files.forEach(function(row,index) { %>
+                <option value="<%= row %>"><%= row %></option>
+                <% }); %>
+            </select>
+    </div>
+    <button type="submit" class="btn btn-outline-warning mt-3">Import</button>
+
+</div>
